@@ -1,0 +1,47 @@
+.reviews {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.reviews_heading {
+  font-size: 2.6rem;
+}
+
+.review_card {
+  width: 60rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--themeColor);
+  font-size: 1.6rem;
+}
+
+.review_card:last-child {
+  border-bottom: none;
+}
+
+.review_user {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.review_user img {
+  height: 6rem;
+  width: 5rem;
+  border-radius: 8px;
+}
+
+.review_content {
+  line-height: 1.8;
+}
+
+.read_more {
+  color: var(--themeColor);
+}
+
+.read_more:hover {
+  text-shadow: 0 0 10px var(--themeColor), 0 0 20px var(--themeColor);
+}

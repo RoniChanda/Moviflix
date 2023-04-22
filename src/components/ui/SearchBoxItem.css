@@ -1,0 +1,37 @@
+.search_item_container {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--bgColor);
+}
+
+.search_item_container:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.search_item_container a {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  gap: 1rem;
+  color: var(--bgColor);
+  font-size: 1.2rem;
+}
+
+.search_item_img {
+  width: 5rem;
+  height: 6rem;
+}
+
+.search_item_content {
+  display: flex;
+  flex-direction: column;
+}
+
+.search_item_title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.search_item_type {
+  text-align: end;
+  color: #fff;
+}

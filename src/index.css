@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300;400;500;600;700;800;900&display=swap");
+
+/*************************************** Base Styles **************************************/
+
+:root {
+  --bgColor: #04050d;
+  --themeColor: #03bcf4;
+  --greyThemeColor: #0296c3;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Merienda", cursive;
+}
+
+body {
+  box-sizing: border-box;
+  background-color: var(--bgColor);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.filter_container {
+  display: flex;
+  gap: 2rem;
+  grid-column: 1/-1;
+  font-size: 1.8rem;
+}
+
+/*************************************** Sharing Styles **************************************/
+
+.logo {
+  position: fixed;
+  display: inline-block;
+  font-weight: 800;
+  z-index: 99;
+}
+
+.logo a {
+  color: var(--bgColor);
+}
+
+.navlink {
+  position: fixed;
+  z-index: 99;
+  color: var(--themeColor);
+  font-size: 2.5rem;
+  transition: all 0.5s linear;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.navlink:hover {
+  text-shadow: 0 0 10px var(--themeColor), 0 0 20px var(--themeColor),
+    0 0 40px var(--themeColor);
+}
+
+.icon {
+  margin-right: 1rem;
+}
+
+.movies_tv {
+  padding: 10rem 3rem 3rem 10rem;
+}
+
+/*************************************** Sharing Animations **************************************/
+
+@keyframes invisible {
+  0%,
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    text-shadow: 0 0 10px var(--themeColor), 0 0 20px var(--themeColor),
+      0 0 40px var(--themeColor), 0 0 60px var(--themeColor),
+      0 0 80px var(--themeColor);
+  }
+  50% {
+    text-shadow: 0 0 10px var(--themeColor);
+  }
+}

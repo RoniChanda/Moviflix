@@ -1,0 +1,75 @@
+.filter_container {
+  width: 100%;
+  padding: 5rem 0 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.filter_input {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  gap: 1rem;
+}
+
+.filter_input label {
+  font-size: 2rem;
+}
+
+.filter_input select {
+  width: 14rem;
+  height: 3rem;
+  border-radius: 8px;
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+  padding: 0 1rem;
+  color: var(--bgColor);
+
+  background-image: url("/images/drop_down.png");
+  background-repeat: no-repeat;
+  background-position: 11rem -0.3rem;
+
+  outline: none;
+  border: none;
+  appearance: none;
+}
+
+.sort_inner {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sort-btn {
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #fff;
+  background-color: transparent;
+}
+
+.grid_container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 4rem;
+
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.filter_result {
+  grid-column: 1/-1;
+  font-size: 1.8rem;
+}
+
+.paginate_container {
+  grid-column: 1/-1;
+}
+
+.no_result {
+  font-size: 2rem;
+  grid-column: 1/-1;
+  margin-top: 5rem;
+}

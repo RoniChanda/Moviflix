@@ -1,0 +1,7 @@
+.details_info_right {
+  grid-column: 2;
+  font-size: 1.6rem;
+  justify-self: flex-end;
+  display: flex;
+  gap: 3rem;
+}

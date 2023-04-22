@@ -1,0 +1,42 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(4, 5, 13, 0.7);
+
+  height: 100vh;
+  width: 6.5rem;
+  z-index: 99;
+}
+
+.nav_logo {
+  top: 1.5rem;
+  left: 10rem;
+  font-size: 4rem;
+  animation: glow 4s linear infinite;
+}
+
+.side_nav {
+  left: 3rem;
+  transform: rotate(-90deg);
+  transform-origin: left;
+  transition: all 0.5s linear;
+}
+
+.side_nav-1 {
+  top: 17rem;
+}
+.side_nav-2 {
+  top: 45rem;
+}
+.side_nav-3 {
+  top: 33rem;
+}
+.side_nav-4 {
+  top: 60rem;
+}
+
+.active {
+  text-shadow: 0 0 10px var(--themeColor), 0 0 20px var(--themeColor),
+    0 0 40px var(--themeColor);
+}

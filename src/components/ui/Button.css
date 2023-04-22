@@ -1,0 +1,11 @@
+.btn {
+  padding: 0.5rem 2rem;
+  color: var(--bgColor);
+  background-color: var(--themeColor);
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  background-color: var(--greyThemeColor);
+}

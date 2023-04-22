@@ -1,0 +1,32 @@
+.paginate {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.paginate button {
+  background-color: var(--bgColor);
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.paginate button:hover {
+  background-color: var(--themeColor);
+}
+
+.btn-hidden {
+  display: none;
+}
+
+.btn-disabled {
+  pointer-events: none;
+}
+
+.paginate .btn-active {
+  background-color: var(--themeColor);
+}

@@ -1,0 +1,49 @@
+.arrow {
+  position: absolute;
+  top: 44%;
+  font-size: 5rem;
+  z-index: 49;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.left-arrow {
+  left: 10rem;
+  animation: leftarrow 2s ease infinite;
+}
+
+.right-arrow {
+  right: 10rem;
+  animation: rightarrow 2s ease infinite;
+}
+
+.arrow:hover {
+  text-shadow: 0 0 10px var(--themeColor), 0 0 20px var(--themeColor);
+}
+
+.first_slider {
+  margin-top: 5rem;
+}
+
+/* Animations */
+
+@keyframes leftarrow {
+  0%,
+  100% {
+    transform: translateX(-1rem);
+  }
+  50% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes rightarrow {
+  0%,
+  100% {
+    transform: translateX(1rem);
+  }
+  50% {
+    transform: translateX(0);
+  }
+}
