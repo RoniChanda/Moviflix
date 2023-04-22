@@ -170,8 +170,16 @@ export const getEndYears = (start) => {
   return years;
 };
 
+// function numberWithCommas(x) {
+//   var parts = x.toString().split(".");
+//   parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+//   return parts.join(".");
+// }
+
 export const commaSeperator = (x) => {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  const parts = x.toString().split(".");
+  parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return parts.join(".");
 };
 
 export const getFilterResult = (
