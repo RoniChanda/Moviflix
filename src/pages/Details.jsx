@@ -9,6 +9,7 @@ import RightInfo from "../components/details/RightInfo";
 import Description from "../components/details/Description";
 import Container from "../components/ui/Container";
 import { commaSeperator } from "../utils/utlity";
+import Button from "../components/ui/Button";
 
 export default function Details() {
   const [details, setDetails] = useState();
@@ -17,8 +18,10 @@ export default function Details() {
   const [reviews, setReviews] = useState([]);
   const [directors, setDirectors] = useState([]);
   const [producers, setProducers] = useState([]);
+  const [dLinks, setDLinks] = useState([]);
   const { type, id } = useParams();
-  const { loadDetails, loadTrailer, loadCredits, loadReviews } = useHttp();
+  const { loadDetails, loadTrailer, loadCredits, loadReviews, downloadLinks } =
+    useHttp();
 
   useEffect(() => {
     loadDetails(type, id).then((data) => setDetails(data));
@@ -33,6 +36,16 @@ export default function Details() {
       setProducers(credits.crew.filter((item) => item.job === "Producer"));
     }
   }, [credits]);
+
+  useEffect(() => {
+    if (details)
+      downloadLinks(details.imdb_id).then((results) => {
+        console.log(results);
+        setDLinks(results);
+      });
+  }, [details]);
+
+  console.log(dLinks);
 
   return (
     <Container>
@@ -132,6 +145,23 @@ export default function Details() {
                     </Link>
                   ))}
                 </div>
+              )}
+            </div>
+
+            {/* Download Links */}
+            <div className="download">
+              <p>Download</p>
+              {dLinks ? (
+                dLinks.map(
+                  (item, index) =>
+                    item.type === "bluray" && (
+                      <Button key={index} link={item.url}>
+                        {item.quality + " | " + item.size}
+                      </Button>
+                    )
+                )
+              ) : (
+                <p style={{ fontSize: "1.6rem" }}>--</p>
               )}
             </div>
 

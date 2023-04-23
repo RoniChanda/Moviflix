@@ -201,23 +201,34 @@ export default function useHttp() {
   );
 
   //# search by a keyword
-  const searchKeyword = useCallback(
-    async (query, page) => {
-      try {
-        const response = await fetch(
-          `${import.meta.env.VITE_TMDB_BASE_URL}/search/multi?api_key=${
-            import.meta.env.VITE_TMDB_API_KEY
-          }&query=${query}&page=${page}`
-        );
+  const searchKeyword = useCallback(async (query, page) => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_TMDB_BASE_URL}/search/multi?api_key=${
+          import.meta.env.VITE_TMDB_API_KEY
+        }&query=${query}&page=${page}`
+      );
 
-        const resData = await response.json();
-        return resData;
-      } catch (error) {
-        console.error(error);
-      }
-    },
-    [dispatch]
-  );
+      const resData = await response.json();
+      return resData;
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
+
+  //# Movie download link
+  const downloadLinks = useCallback(async (imdb_id) => {
+    try {
+      const response = await fetch(
+        `https://yts.mx/api/v2/movie_details.json?imdb_id=${imdb_id}`
+      );
+
+      const resData = await response.json();
+      return resData.data.movie.torrents;
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
 
   return {
     loadPopular,
@@ -230,5 +241,6 @@ export default function useHttp() {
     loadPerson,
     loadGenres,
     searchKeyword,
+    downloadLinks,
   };
 }
