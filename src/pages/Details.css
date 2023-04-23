@@ -108,14 +108,3 @@
 .crew_inner a:hover {
   text-shadow: 0 0 10px var(--themeColor);
 }
-
-.download p {
-  font-size: 2.6rem;
-  font-weight: 600;
-  margin-bottom: 2rem;
-}
-
-.download a {
-  margin-right: 2rem;
-  font-size: 1.6rem;
-}

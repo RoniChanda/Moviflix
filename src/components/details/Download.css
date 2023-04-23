@@ -1,0 +1,55 @@
+.download {
+  margin-bottom: 2rem;
+}
+
+.download p {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.download a {
+  margin-right: 2rem;
+  font-size: 1.6rem;
+}
+
+.download-btns {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  row-gap: 2rem;
+}
+
+.download-btn {
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.allmovieshub {
+  background-color: #0b9399;
+  color: #fff;
+}
+
+.allmovieshub:hover {
+  background-color: #0b7cac;
+}
+
+.btn-1337x {
+  background-color: #f14e13;
+  border: 1px solid #f85c27;
+  color: #fff;
+}
+
+.btn-1337x:hover {
+  background-color: #000;
+}
+
+.ytstv {
+  background-color: #79c142;
+  color: #fff;
+}
+
+.ytstv:hover {
+  background-color: #6bab3b;
+}

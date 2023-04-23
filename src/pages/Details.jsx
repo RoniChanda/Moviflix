@@ -9,7 +9,7 @@ import RightInfo from "../components/details/RightInfo";
 import Description from "../components/details/Description";
 import Container from "../components/ui/Container";
 import { commaSeperator } from "../utils/utlity";
-import Button from "../components/ui/Button";
+import Download from "../components/details/Download";
 
 export default function Details() {
   const [details, setDetails] = useState();
@@ -129,7 +129,7 @@ export default function Details() {
               {directors.length !== 0 && (
                 <div className="crew_inner">
                   <p>Director :</p>
-                  {directors.map((item) => (
+                  {directors.slice(0, 4).map((item) => (
                     <Link to={`/person/${item.id}`} key={item.id}>
                       {item.name}
                     </Link>
@@ -139,7 +139,7 @@ export default function Details() {
               {producers.length !== 0 && (
                 <div className="crew_inner">
                   <p>Producer :</p>
-                  {producers.map((item) => (
+                  {producers.slice(0, 4).map((item) => (
                     <Link to={`/person/${item.id}`} key={item.id}>
                       {item.name}
                     </Link>
@@ -148,28 +148,18 @@ export default function Details() {
               )}
             </div>
 
-            {/* Download Links */}
-            <div className="download">
-              <p>Download</p>
-              {dLinks ? (
-                dLinks.map(
-                  (item, index) =>
-                    item.type === "bluray" && (
-                      <Button key={index} link={item.url}>
-                        {item.quality + " | " + item.size}
-                      </Button>
-                    )
-                )
-              ) : (
-                <p style={{ fontSize: "1.6rem" }}>--</p>
-              )}
-            </div>
-
             {/* Description */}
             <Description
               details={details}
               credits={credits.cast}
               reviews={reviews}
+            />
+
+            {/* Download Links */}
+            <Download
+              dLinks={dLinks}
+              type={type}
+              name={details.title || details.name}
             />
           </div>
         </Fragment>
