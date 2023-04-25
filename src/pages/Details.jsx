@@ -19,13 +19,18 @@ export default function Details() {
   const [directors, setDirectors] = useState([]);
   const [producers, setProducers] = useState([]);
   const [dLinks, setDLinks] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const { type, id } = useParams();
   const { loadDetails, loadTrailer, loadCredits, loadReviews, downloadLinks } =
     useHttp();
 
   useEffect(() => {
+    setIsLoading(true);
     loadDetails(type, id).then((data) => setDetails(data));
-    loadTrailer(type, id).then((data) => setTrailerKey(data));
+    loadTrailer(type, id).then((data) => {
+      setTrailerKey(data);
+      setIsLoading(false);
+    });
     loadCredits(type, id).then((data) => setCredits(data));
     loadReviews(type, id).then((data) => setReviews(data));
   }, [type, id]);
@@ -89,7 +94,7 @@ export default function Details() {
               </div>
 
               {/* Trailer */}
-              <Video trailerKey={trailerKey} />
+              {!isLoading && <Video trailerKey={trailerKey} />}
             </div>
 
             {/* Genres */}
